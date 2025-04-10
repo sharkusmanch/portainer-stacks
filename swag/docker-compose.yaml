@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  my-service:
+    image: lscr.io/linuxserver/swag
+    environment:
+      - PUID=911
+      - PGID=911
+      - TZ=America/Los_Angeles
+      - URL=${URL}
+      - SUBDOMAINS=wildcard
+      - VALIDATION=dns
+      - DNSPLUGIN=cloudflare
+  networks:
+      - apps
+  volumes:
+    - /share/Container/swag:/config

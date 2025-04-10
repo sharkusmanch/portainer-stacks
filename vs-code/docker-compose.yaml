@@ -1,0 +1,15 @@
+---
+services:
+  homeassistant:
+    image: lscr.io/linuxserver/code-server:latest
+    container_name: code
+    env_file:
+      - /env/common.env
+    environment:
+      - DEFAULT_WORKSPACE=/workspce
+    volumes:
+      - /share/Container/code:/config
+      - /share/Container:/workspce
+    ports:
+      - 8123:8123
+    restart: unless-stopped

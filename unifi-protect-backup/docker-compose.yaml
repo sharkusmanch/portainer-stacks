@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  unifi-protect-backup:
+    image: ghcr.io/ep1cman/unifi-protect-backup
+    volumes:
+      - /share/Container/unifi-protect-backup/data:/data
+      - /share/Container/unifi-protect-backup/database:/config/database
+      - /share/Container/syncthing/config/Config/rclone.conf:/config/rclone/rclone.conf
+    env_file:
+      - /env/unifi-protect-backup.env
+    environment:
+      - UFP_ADDRESS: 192.168.1.1
+      - UFP_SSL_VERIFY: false
+      - RCLONE_DESTINATION: 'unifi-protect-backup:/'
+    restart: unless-stopped

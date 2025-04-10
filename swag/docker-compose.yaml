@@ -2,10 +2,10 @@ version: '3.8'
 services:
   swag:
     image: lscr.io/linuxserver/swag
+    env_file:
+      - /share/Container/env/common.env
+      - /share/Container/env/swag.env
     environment:
-      - PUID=911
-      - PGID=911
-      - TZ=America/Los_Angeles
       - URL=${URL}
       - SUBDOMAINS=wildcard
       - VALIDATION=dns

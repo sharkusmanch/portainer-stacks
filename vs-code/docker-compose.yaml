@@ -13,3 +13,7 @@ services:
     ports:
       - 8123:8123
     restart: unless-stopped
+
+networks:
+  apps:
+    external: true

@@ -3,8 +3,8 @@ services:
   swag:
     image: lscr.io/linuxserver/swag
     env_file:
-      - /share/Container/env/common.env
-      - /share/Container/env/swag.env
+      - /env/common.env
+      - /env/swag.env
     environment:
       - URL=${URL}
       - SUBDOMAINS=wildcard

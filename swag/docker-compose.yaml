@@ -1,4 +1,4 @@
-version: "2.1"
+version: '3.8'
 services:
   my-service:
     image: lscr.io/linuxserver/swag
@@ -10,7 +10,7 @@ services:
       - SUBDOMAINS=wildcard
       - VALIDATION=dns
       - DNSPLUGIN=cloudflare
-  networks:
-      - apps
-  volumes:
-    - /share/Container/swag:/config
+    networks:
+      apps: {} # Corrected to a mapping
+    volumes:
+      - /share/Container/swag:/config

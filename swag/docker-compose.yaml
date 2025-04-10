@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  my-service:
+  swag:
     image: lscr.io/linuxserver/swag
     environment:
       - PUID=911
@@ -11,6 +11,10 @@ services:
       - VALIDATION=dns
       - DNSPLUGIN=cloudflare
     networks:
-      apps: {} # Corrected to a mapping
+      apps: {}
     volumes:
       - /share/Container/swag:/config
+
+networks:
+  apps:
+    external: true

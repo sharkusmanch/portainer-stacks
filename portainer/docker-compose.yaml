@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  portainer:
+    image: portainer/portainer-ce:2.27.3
+    container_name: portainer
+    restart: always
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - 9001:8000
+      - 9000:9000
+      - 9043:9443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /share/CACHEDEV1_DATA/Container/portainer-ce/data:/data:rw
+      - /share/CACHEDEV1_DATA/Container/env:/env
+    environment:
+      TZ: America/Los_Angeles

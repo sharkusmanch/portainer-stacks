@@ -14,7 +14,3 @@ services:
     ports:
       - 8123:8443
     restart: unless-stopped
-
-networks:
-  apps:
-    external: true

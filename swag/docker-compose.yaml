@@ -10,13 +10,8 @@ services:
       - SUBDOMAINS=wildcard
       - VALIDATION=dns
       - DNSPLUGIN=cloudflare
-    networks:
-      apps: {}
+    network_mode: host # Use the host network
     volumes:
       - /share/Container/swag:/config
     ports:
       - "443:443"
-
-networks:
-  apps:
-    external: true

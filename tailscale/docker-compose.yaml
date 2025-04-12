@@ -8,8 +8,8 @@ services:
     env_file:
       - /env/tailscale.env
     environment:
-      - TS_EXTRA_ARGS="-—advertise-exit-node --exit-node-allow-lan-access"
-      - TS_ADVERTISE_ROUTES="0.0.0.0/0"
+      - TS_EXTRA_ARGS=-—advertise-exit-node
+      - TS_ADVERTISE_ROUTES=0.0.0.0/0
     volumes:
       - tailscale-state:/var/lib/tailscale
       - /dev/net/tun:/dev/net/tun

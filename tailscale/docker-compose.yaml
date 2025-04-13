@@ -12,6 +12,7 @@ services:
       - TS_ADVERTISE_ROUTES=0.0.0.0/0
       - TS_AUTH_ONCE=true
       - TS_HOSTNAME=qnap
+      - TS_STATE_DIR=/var/lib/tailscale
     volumes:
       - /var/lib:/var/lib
       - /dev/net/tun:/dev/net/tun

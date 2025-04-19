@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    env_file:
+      - /env/common.env
+    container_name: sonarr
+    volumes:
+      - /share/Container/sonarr:/config
+    ports:
+      - 8989:8989
+    restart: unless-stopped

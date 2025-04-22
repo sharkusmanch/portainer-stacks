@@ -13,6 +13,6 @@ services:
     volumes:
       - /share/Container/syncthing/config/Config/rclone.conf:/config/rclone/rclone.conf
     command: >
-      rclone serve webdav ${RCLONE_BACKEND}
+      serve webdav ${RCLONE_BACKEND}
       --addr :8181
       --config /config/rclone/rclone.conf

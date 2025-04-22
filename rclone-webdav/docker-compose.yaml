@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  rclone-webdav:
+    image: rclone/rclone:latest
+    container_name: rclone-webdav
+    restart: unless-stopped
+    env_file:
+      - /env/common.env
+      - /env/rclone.env
+    ports:
+      - "8181:8181"
+    volumes:
+      - /share/Container/syncthing/config/Config/rclone.conf:/config/rclone/rclone.conf
+    command: >
+      rclone serve webdav ${RCLONE_BACKEND}
+      --addr :8181
+      --config /config/rclone/rclone.conf

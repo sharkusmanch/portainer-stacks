@@ -12,7 +12,12 @@ services:
       - "8181:8181"
     volumes:
       - /share/Container/syncthing/config/Config/rclone.conf:/config/rclone/rclone.conf
+    entrypoint: /bin/sh
     command: >
-      serve webdav ${RCLONE_BACKEND}
-      --addr :8181
-      --config /config/rclone/rclone.conf
+      -c "
+      rclone serve webdav \"$RCLONE_BACKEND\" \
+        --addr 100.101.102.103:8808 \
+        --config /config/rclone/rclone.conf \
+        --no-modtime \
+        --read-only
+      "

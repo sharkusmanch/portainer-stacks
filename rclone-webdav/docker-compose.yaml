@@ -9,7 +9,7 @@ services:
       - /env/common.env
       - /env/rclone.env
     ports:
-      - "8181:8181"
+      - "8808:8808"
     volumes:
       - /share/Container/syncthing/config/Config/rclone.conf:/config/rclone/rclone.conf
     entrypoint: /bin/sh

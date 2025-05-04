@@ -13,5 +13,5 @@ services:
     volumes:
       - /share/Container/homeassistant:/config
     ports:
-      - 8123:8123 #optional
+      - 8234:8123
     restart: unless-stopped

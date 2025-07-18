@@ -1,0 +1,13 @@
+version: '3'
+services:
+  homebridge:
+    image: homebridge/homebridge:latest
+    restart: unless-stopped
+    network_mode: host
+    env_file:
+      - /env/common.env
+    environment:
+      - TZ=Europe/London
+      - HOMEBRIDGE_CONFIG_UI=1
+    volumes:
+      - /share/Container/homebridge:/homebridge

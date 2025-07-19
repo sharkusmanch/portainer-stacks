@@ -1,0 +1,9 @@
+version: '3'
+services:
+  redlib:
+    image: quay.io/redlib/redlib:latest
+    restart: unless-stopped
+    ports:
+      - "23891:8080"
+    env_file:
+      - /env/common.env
